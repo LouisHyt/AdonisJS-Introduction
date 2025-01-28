@@ -1,0 +1,17 @@
+@if(flashMessages.has('success'))
+    <div class="alert alert-success mx-auto" style="width: max-content; margin-top: 1rem; margin-bottom: 1rem;">
+        {{old('success')}}
+    </div>
+@end
+
+@if(flashMessages.has('warning'))
+    <div class="alert alert-warning mx-auto" style="width: max-content; margin-top: 1rem; margin-bottom: 1rem;">
+        {{old('warning')}}
+    </div>
+@end
+
+@error('E_INVALID_CREDENTIALS')
+    <div class="alert alert-danger mx-auto" style="width: max-content; margin-top: 1rem; margin-bottom: 1rem;">
+        {{$message}}
+    </div>
+@end

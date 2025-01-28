@@ -1,0 +1,14 @@
+@let(title = "Home")
+@layout.app({ title })
+ 
+    @slot('meta')
+        <meta name="description" content="Home page of the website">
+        <link rel="stylesheet" href="{{asset('resources/css/home.css')}}">
+    @endslot
+    
+    @slot('content')
+        <h1 class="text-center">Home Page</h1>
+    @endslot
+
+@end
+

@@ -1,0 +1,23 @@
+@let(title = "Login")
+@layout.app({ title })
+ 
+    @slot('meta')
+        <meta name="description" content="Login page">
+    @endslot
+    
+    @slot('content')
+        <h1 class="text-center">{{title}}</h1>
+        <form action="{{ route("auth.handle_login") }}" method="POST" class="w-75 mx-auto p-3 bg-light rounded">
+            {{ csrfField() }}
+            @!component('components/input', { name: "email", label: 'email', type: "email" })
+            @!component('components/input', { name: "password", label: 'Password', type: "password" })
+            <button type="submit" class="btn btn-outline-info mt-3">{{title}}</button>
+        </form>
+        
+        <div class="w-50 mx-auto mt-5">
+            <p class="text-center">Or login with</p> 
+            <a class="btn btn-outline-info mt-2 d-block mx-auto" href="{{route('auth.github.redirect')}}">Github</a>
+        </div>
+    @endslot
+
+@end

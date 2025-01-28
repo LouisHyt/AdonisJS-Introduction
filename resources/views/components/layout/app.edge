@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if ($slots.meta())
+        {{{ await $slots.meta() }}}
+    @endif
+    <title>Mon site | {{title || 'home'}}</title>
+</head>
+<body>
+    @include("partials/nav")
+    <main id="content">
+        @include("partials/flash")
+        {{{await $slots.content()}}}
+    </main>
+</body>
+</html>
