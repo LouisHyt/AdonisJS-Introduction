@@ -37,7 +37,6 @@ npm install
 
 4. Configure and create the Database
 - Create a mySQL database with the same name provided in the `.env` file
-- If you don't have any migration file in the folder database\migrations, run the command `node ace make:migration`.
 - Run the command `node ace migration:run`
 
 5. Start the application in development mode:
